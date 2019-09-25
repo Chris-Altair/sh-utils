@@ -9,7 +9,7 @@ function getUserInfo(){
 	access_token_uri="http://localhost:9999/oauth/token"
 	user_info_uri="http://localhost:9999/me"
 	#根据code请求token
-	result=`curl --user tdfOauth2SSO213:123456 \
+	result=`curl --user $client_id:$client_secret \
 	$access_token_uri -X POST \
 	-H "Content-Type:application/x-www-form-urlencoded" \
 	-d "client_id=$client_id&grant_type=$grant_type&scope=$scope&redirect_uri=$redirect_uri&client_secret=$client_secret&code=$1" \
